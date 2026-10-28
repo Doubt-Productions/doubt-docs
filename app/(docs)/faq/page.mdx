@@ -1,0 +1,46 @@
+export const metadata = {
+  title: 'FAQ',
+  description: 'Common problems and how to fix them.',
+};
+
+# FAQ
+
+## I don't see Doubt's commands
+
+Discord can take a moment to show a new bot's commands. Restart Discord (or press `Ctrl R`). If a command still doesn't show, an admin may have hidden it in **Server Settings → Integrations → Doubt**, or you don't have the permission it needs by default (see the [command list](/reference/commands)).
+
+## Doubt says it's missing a permission
+
+It names the permission and the channel. Add it to Doubt's role, or remove the channel override that denies it. See [Permissions](/reference/permissions).
+
+## Doubt can't give a role, or can't moderate someone
+
+Doubt's highest role has to be above that role or member. Drag Doubt's role higher in **Server Settings → Roles**. Doubt also refuses roles with dangerous permissions; see [Roles Doubt may give](/features/welcome#roles-doubt-may-give).
+
+## `/automod` says it needs Manage Server
+
+Discord only lets bots edit AutoMod rules with **Manage Server**. Give Doubt's role that permission. See [AutoMod](/features/automod).
+
+## The welcome message doesn't appear
+
+Check that a welcome channel is set in `/setup` → **Welcome**, and that Doubt can **View Channel** and **Send Messages** there. Use **Send test** to try it.
+
+## Members aren't getting XP
+
+Levelling may be off in `/setup` → **Levelling**, the channel may be a no-XP channel, or the member already earned XP in the last minute.
+
+## Transcripts don't show what members wrote
+
+Discord only gives verified bots the text of messages after approving their **Message Content** access. Until then, transcripts show who posted when, with attachments and embeds. See [Tickets](/features/tickets#transcripts).
+
+## A member can't open a ticket
+
+They may already have a ticket open (one at a time), or the ticket category is missing or Doubt lacks **Manage Channels** and **Manage Roles** on it.
+
+## I removed Doubt by accident
+
+Add it again within 30 days and everything is still there. After that, the server's data is deleted.
+
+## How do I contact Doubt?
+
+Join the [support server](https://doubtbot.eu/support) or email [contact@doubtbot.eu](mailto:contact@doubtbot.eu).

@@ -1,0 +1,49 @@
+export const metadata = {
+  title: 'Security and data',
+  description: 'What Doubt stores, how long, and how access works.',
+};
+
+# Security and data
+
+This page explains in plain terms what Doubt keeps and who can see it. The [privacy policy](https://doubtbot.eu/privacy) and [terms](https://doubtbot.eu/terms) on doubtbot.eu are the binding versions.
+
+## What Doubt stores
+
+| Data | Why | Kept until |
+|---|---|---|
+| Server settings from `/setup` and the dashboard | So the features work | 30 days after Doubt leaves the server |
+| Cases (member, moderator, action, reason, time) | Moderation history | 30 days after Doubt leaves the server |
+| Tickets and their transcripts | Support history | Transcripts: 30 days after the ticket closed |
+| AutoMod hits (member, rule, matched keyword) | The AutoMod log | 30 days after Doubt leaves the server |
+| XP and levels | Levelling | 30 days after Doubt leaves the server |
+| Economy accounts | The economy | Until you delete it with `/economy`, or 30 days after Doubt leaves the server |
+| Your AFK message and the nickname to restore | AFK | Until you're back |
+| Your Doubt profile: badges, rank card style, flair | Your profile and Premium perks | Until you reset them |
+| Reports you send to Doubt's staff | Staff review | 30 days after they're handled |
+
+Doubt does **not** store message text for levelling, AFK or AutoMod, and it stores no payment details: Premium purchases are handled by Discord. Data is stored on a privately run server.
+
+## Who can see a server's data
+
+- **Your server's admins and moderators**, through Discord and the [dashboard](/dashboard), according to their permissions in your server.
+- **Not Doubt's staff.** Doubt's own staff and developers get no access to any server's settings, cases, tickets or transcripts, unless their own roles in that server allow it. Staff tools only cover running the bot: the list of servers, blocking abusive users or servers, and handling reports.
+
+## How Doubt protects your server
+
+- **Every action is checked twice.** Discord's permission defaults decide who sees a command; Doubt then checks the member's real permissions and role order before acting.
+- **Safe roles only.** Doubt won't hand out a role with dangerous permissions, or one above the person who picked it. See [Roles Doubt may give](/features/welcome#roles-doubt-may-give).
+- **No posting where you can't.** Doubt only posts your text (welcome, level-up, embeds, the ticket panel) in channels you can post in yourself.
+- **No pings from embeds.** Embeds made with `/embedcreator` and scheduled messages never ping anyone.
+- **Native AutoMod.** Filtering runs in Discord itself, so it keeps working if Doubt is down.
+- **Signed dashboard requests.** The dashboard talks to the bot over a private connection, and every request is signed and accepted only once.
+
+## Deleting your data
+
+- Remove Doubt from your server and its data for that server is deleted after 30 days.
+- Admins can delete a ticket transcript on the dashboard at any time.
+- `/economy` deletes your economy account; `/rank style reset:true` and `/profile flair reset:true` remove your styles.
+- For anything else, email [contact@doubtbot.eu](mailto:contact@doubtbot.eu).
+
+## Reporting a security problem
+
+Found a way to misuse Doubt or see data you shouldn't? Email [contact@doubtbot.eu](mailto:contact@doubtbot.eu) with the details and please don't share it publicly until it's fixed.

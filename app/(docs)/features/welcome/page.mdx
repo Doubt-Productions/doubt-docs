@@ -1,0 +1,48 @@
+export const metadata = {
+  title: 'Welcome and join roles',
+  description: 'Welcome messages, placeholders and roles for new members.',
+};
+
+# Welcome and join roles
+
+When someone joins, Doubt can post a welcome message and give them a role. Set it up in `/setup` → **Welcome** or on the dashboard's **Welcome** settings.
+
+## Settings
+
+| Setting | What it does |
+|---|---|
+| **Welcome channel** | Where the welcome message is posted. No channel means no message. |
+| **Rules channel** | The channel `{rules}` links to. |
+| **Role for new members** | Given to every person who joins. |
+| **Role for new bots** | Given to bots that are added, instead of the member role. |
+| **Message** | Your own welcome text, or the default. **Send test** posts it as if you just joined; **Reset message** goes back to the default. |
+
+The default message is:
+
+> 👋 Welcome to **Your Server**, @member! Have a look at #rules and enjoy your stay. You are member #1,234.
+
+## Placeholders
+
+| Placeholder | Becomes |
+|---|---|
+| `{user}` | A mention of the new member |
+| `{username}` | Their username, without a ping |
+| `{server}` | Your server's name |
+| `{rules}` | A link to the rules channel (or "the rules" when none is set) |
+| `{membercount}` | The member count after they joined |
+
+## Roles Doubt may give
+
+To keep a join role from becoming a back door, Doubt only gives roles that are safe:
+
+- The role must be below Doubt's highest role, and can't be `@everyone` or a role managed by an integration.
+- It can't carry **Administrator**, **Manage Server**, **Manage Roles**, **Manage Channels**, **Manage Webhooks**, **Manage Messages**, **Ban Members**, **Kick Members**, **Timeout Members** or **Mention Everyone**.
+- The person who picks it must be the owner, an Administrator, or have **Manage Roles** with the role below their own highest role.
+
+Doubt checks this again before each join, and skips a role that has become unsafe. The same rules apply to [level reward roles](/features/levelling).
+
+The welcome channel must also be one you can view and post in yourself: Doubt won't post your text in a channel you couldn't post in.
+
+<Callout type="premium" title="💎 Premium: welcome image cards">
+Turn on the **image card** to attach a picture to every welcome message, with the new member's avatar, name, your server's name and the member count. Doubt needs **Attach Files** in the welcome channel; without it the message is sent without the card.
+</Callout>

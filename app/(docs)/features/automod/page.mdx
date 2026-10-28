@@ -1,0 +1,38 @@
+export const metadata = {
+  title: 'AutoMod',
+  description: "Discord's own AutoMod rules, managed and logged by Doubt.",
+};
+
+# AutoMod
+
+Doubt doesn't run its own filter. It sets up **Discord's native AutoMod rules** for you, so messages are blocked by Discord itself, instantly, even if Doubt is offline. Doubt then logs every hit to a channel you choose.
+
+All `/automod` commands need **Manage Server**.
+
+<Callout type="warning">
+Discord only lets a bot edit AutoMod rules when it has **Manage Server** itself, and Doubt's invite doesn't ask for that permission. To use `/automod`, give Doubt's role **Manage Server** in **Server Settings → Roles**. Doubt tells you when it's missing.
+</Callout>
+
+## Protections
+
+| Command | What it blocks |
+|---|---|
+| `/automod spam enabled` | Messages Discord flags as spam. |
+| `/automod invites enabled` | Invite links to other Discord servers. |
+| `/automod mentions limit` | Messages with more than `limit` mentions (3 to 50). `0` turns it off. |
+| `/automod filter level` | Discord's own word lists: off, slurs, slurs and sexual content, or all three lists including swearing. |
+| `/automod words add words` | Your own blocked words, comma-separated. Use `*` as a wildcard: `*scam*` matches any word containing "scam". |
+| `/automod words remove words` | Unblock words again. |
+| `/automod words list` | Show your blocked words. |
+
+`/automod status` shows which protections are on, where hits are logged, and any other AutoMod rules your server has that Doubt doesn't manage.
+
+<Callout>
+Doubt recognises its own rules by their name and by Doubt being their creator. Rules you made yourself in **Server Settings → AutoMod** keep working, and Doubt never changes them.
+</Callout>
+
+## Hit log
+
+`/automod log channel` picks where hits are posted; leave `channel` empty to stop logging. You can also set it in `/setup` → **Moderation**. Each log entry shows the member, the rule, the action Discord took (block or timeout) and the keyword that matched. Doubt never stores or posts the rest of the message.
+
+<CommandList category="Moderation" prefix="/automod" />

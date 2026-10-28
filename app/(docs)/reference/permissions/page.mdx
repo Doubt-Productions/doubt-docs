@@ -1,0 +1,45 @@
+export const metadata = {
+  title: 'Permissions',
+  description: 'What Doubt needs in your server, and why.',
+};
+
+# Permissions
+
+Doubt's invite link asks for these permissions. Keep them all ticked: each one is used by a feature, and Doubt asks for nothing it doesn't use.
+
+| Permission | Used for |
+|---|---|
+| **View Channels** | Seeing the channels it posts in and the ticket channels it creates. |
+| **Send Messages** | Welcome, level-up, mod log and ticket messages, and command replies. |
+| **Embed Links** | Every Doubt message is an embed. |
+| **Attach Files** | Rank cards, welcome cards and ticket transcripts. |
+| **Read Message History** | Saving ticket transcripts. |
+| **Manage Messages** | Cleaning up messages in the channels Doubt manages. |
+| **Manage Channels** | Creating and deleting ticket channels. |
+| **Manage Roles** | Welcome and reward roles, and the permissions on each ticket channel. |
+| **Kick Members** | `/kick` |
+| **Ban Members** | `/ban` and `/unban`, and lifting temporary bans. |
+| **Timeout Members** | `/timeout` and `/untimeout` |
+
+A few permissions aren't in the invite, because only one optional feature uses each:
+
+- **Manage Server** lets Doubt manage [AutoMod](/features/automod) rules. Add it to Doubt's role if you use `/automod`.
+- **Manage Nicknames** lets Doubt put `[AFK]` in front of your nickname while you're [AFK](/features/utility#afk). Without it, AFK works the same, just without the tag.
+- **Create Invite** is only used in Doubt's own support server.
+
+## Role order
+
+Discord lets a bot manage only the roles and members below its own highest role. Put Doubt's role:
+
+- above every role it should give (welcome and level reward roles), and
+- above the members it should moderate.
+
+When something is missing, Doubt tells you which permission it lacks and where, instead of failing silently.
+
+## Channel overrides
+
+A channel can take a permission away again with an override. If Doubt can't post the welcome message, the mod log or the ticket panel, check that channel's **Permissions** tab for a deny on Doubt's role or `@everyone`.
+
+## Discord intents
+
+Doubt asks Discord for the **Server Members** intent (to welcome members and give join roles). It does not read members' messages: for levelling and AFK it only notes who posted where. Message text is only read to save ticket transcripts, and only while Discord has approved Doubt's **Message Content** access. Doubt has no prefix commands.

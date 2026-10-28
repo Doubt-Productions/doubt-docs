@@ -1,0 +1,11 @@
+# Default gitleaks rules, plus one narrow exception.
+[extend]
+useDefault = true
+
+# The production Discord application (client) ID is public: it is part of every invite link.
+# Allow only this exact value, only for the discord-client-id rule.
+[[allowlists]]
+description = "Public Doubt application ID (invite link)"
+targetRules = ["discord-client-id"]
+regexTarget = "secret"
+regexes = ['''^941052587837378570$''']

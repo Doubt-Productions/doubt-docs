@@ -1,0 +1,45 @@
+export const metadata = {
+  title: 'Dashboard',
+  description: 'Sign in, who sees what, and every dashboard page.',
+};
+
+# Dashboard
+
+The dashboard at [dash.doubtbot.eu](https://dash.doubtbot.eu) has the same settings as `/setup`, plus cases, transcripts and stats, in your browser.
+
+## Signing in
+
+Press **Sign in with Discord**. Discord asks to share your username, avatar and the list of servers you're in, so the dashboard can show the servers you manage. Doubt never gets your password.
+
+On the sign-in page there is an unticked box, **Also join the Doubt support server**. Only if you tick it does Discord ask for permission to add you to the support server, and Doubt adds you once. It never adds anyone on its own.
+
+## Who sees what
+
+Access is checked against your **live** permissions in each server, every time you open a page:
+
+| Your permission in the server | What you see |
+|---|---|
+| **Manage Server** or **Administrator** | Everything: overview, settings, cases, transcripts, stats and the Premium pages. |
+| **Timeout Members** | The overview and **Cases**, read-only. |
+| Neither | The server isn't listed. |
+
+Being part of Doubt's own staff gives no access to any server's dashboard: staff see a server's settings, cases or transcripts only if their own roles in that server allow it.
+
+## Pages
+
+| Page | What it does |
+|---|---|
+| **All servers** | Your servers, with Doubt added or not. Servers without Doubt get an **Add Doubt** button. |
+| **Overview** | Which features are on, recent cases and the top members by XP. |
+| **Cases** | Every case, newest first, with a filter per member. |
+| **Transcripts** | Closed tickets, with each transcript to read in the browser or delete. |
+| **Stats** 💎 | Tickets opened and closed, time to close, cases per action and top moderators, over 30 or 90 days, and a CSV export of every case. |
+| **Settings** | **Welcome**, **Tickets**, **Moderation** and **Levelling**, the same as `/setup`, with channel, role and emoji pickers. |
+| **Bot look** 💎 | Upload Doubt's avatar and banner for the server and set its bio. |
+| **Scheduled** 💎 | Create, pause and delete scheduled messages. |
+
+Pages marked 💎 need [server Premium](/features/premium) to change anything; resetting the bot look and deleting schedules always work.
+
+## Rules the dashboard follows
+
+The dashboard can't do more than you could in Discord. A role you pick must pass the same [role safety rules](/features/welcome#roles-doubt-may-give), and a channel where Doubt will post your text (welcome, level-ups, the ticket panel) must be one you can post in yourself.
