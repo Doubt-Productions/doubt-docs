@@ -1,0 +1,40 @@
+export const metadata = {
+  title: 'Commands',
+  description: 'Every command and context menu, with who can use it.',
+};
+
+# Commands
+
+Every Doubt command is a slash command: type `/` in Discord and pick it from the list. This list is generated from the bot itself, so it matches what you see in Discord.
+
+The label on the right is the permission a member needs by default. Server admins can change who sees each command in **Server Settings → Integrations → Doubt**; Doubt still checks the real permission when the command runs. **Everyone** means any member can use it.
+
+## Context menus
+
+Right-click a member or a message and open **Apps** (on mobile, long-press).
+
+<ContextMenuList />
+
+## Moderation
+
+<CommandList category="Moderation" />
+
+## Tickets
+
+<CommandList category="Tickets" />
+
+## Setup
+
+<CommandList category="Setup" />
+
+## Levelling
+
+<CommandList category="Levelling" />
+
+## Economy
+
+<CommandList category="Economy" />
+
+## Utility
+
+<CommandList category="Utility" />

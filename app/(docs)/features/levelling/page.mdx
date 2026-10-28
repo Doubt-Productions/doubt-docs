@@ -1,0 +1,49 @@
+export const metadata = {
+  title: 'Levelling',
+  description: 'XP, rank cards, level-up messages and reward roles.',
+};
+
+# Levelling
+
+Members earn XP for chatting and level up over time. Levelling is on in every server unless you turn it off in `/setup` → **Levelling**.
+
+## How XP works
+
+- One message a minute per member earns **15 to 25 XP**. Messages in between earn nothing, so spamming doesn't help.
+- Going from level `L` to the next level costs `5L² + 50L + 100` XP. Reaching level 1 takes 100 XP; going from level 9 to 10 takes 955 XP, and each level after that costs a little more.
+- Doubt only notes who sent a message and where. It never reads or stores the text for levelling.
+
+## Rank cards and leaderboard
+
+- `/rank info` shows your rank card (or someone else's with `user`): level, XP into the level, progress bar and rank in the server.
+- `/rank leaderboard` shows the members with the most XP.
+
+## Level-up messages
+
+Pick where they go in `/setup` → **Levelling**: **where they chatted**, **in one channel**, or off. The default message is:
+
+> 🎉 @member reached level **5**!
+
+Placeholders: `{user}` (a mention), `{username}`, `{level}` and `{server}`.
+
+## Reward roles
+
+`/rank reward add level role` gives a role when a member reaches that level; `/rank reward remove level` stops it. A server can have **25** reward roles, or **100** with Premium. Reward roles follow the same [safety rules](/features/welcome#roles-doubt-may-give) as welcome roles.
+
+## Changing someone's level
+
+`/rank set user level` and `/rank reset user` change or clear a member's level. Both need **Manage Server**.
+
+## Premium extras
+
+<Callout type="premium" title="💎 Server Premium: XP boosts and more rewards">
+In `/setup` → **Levelling** → **XP boosts** (or on the dashboard), give roles and channels or categories a multiplier from 1.1× to 3×, up to 25 of each, and pick up to 25 channels or categories where messages earn no XP. A message earns the member's best role boost times the best channel boost, capped at 3×. Servers with Premium can also have 100 reward roles.
+</Callout>
+
+<Callout type="premium" title="💎 User Premium: your own rank card">
+`/rank style` picks one of eight backgrounds, an accent colour and a bar colour for your rank card, in every server. `/rank style reset:true` goes back to the standard card.
+</Callout>
+
+If Premium ends, boosts and styles are kept but not used until it's back, and only the 25 lowest-level rewards are given.
+
+<CommandList category="Levelling" />

@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint and format
+        run: yarn biome:ci
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Build (static export)
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: yarn build

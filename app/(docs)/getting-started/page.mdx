@@ -1,0 +1,42 @@
+export const metadata = {
+  title: 'Add Doubt to your server',
+  description: 'Invite Doubt, check its role and run /setup.',
+};
+
+# Add Doubt to your server
+
+Doubt is ready in a few minutes: invite it, move its role up, and pick what it should do with `/setup`.
+
+<Steps>
+
+1. **Invite Doubt.** Open [doubtbot.eu/invite](https://doubtbot.eu/invite), pick your server and keep every permission ticked. You need **Manage Server** in that server to add a bot. The permissions are explained on the [permissions page](/reference/permissions).
+
+2. **Move Doubt's role up.** In **Server Settings → Roles**, drag the **Doubt** role above every role it should give out (welcome and level reward roles) and above the members it should moderate. Discord only lets a bot act on roles and members below its own highest role.
+
+3. **Run `/setup`.** It opens a private panel with four sections: **Welcome**, **Tickets**, **Moderation** and **Levelling**. Each one shows what's set and has buttons and menus to change it. Only you see the panel. You need **Manage Server**.
+
+4. **Try a command.** `/help` lists every command you can use. Moderators can try `/warn` on a test account and see the case appear in the mod log.
+
+</Steps>
+
+<Callout type="tip">
+Everything in `/setup` is also on the [dashboard](https://dash.doubtbot.eu), with channel and role pickers. Use whichever you like; they change the same settings.
+</Callout>
+
+## What to set up first
+
+- **Moderation:** pick a **mod log** channel so every case is posted there, and choose whether members get a DM when they're warned, timed out, kicked or banned (on by default). See [Moderation and cases](/features/moderation).
+- **AutoMod:** run `/automod status`, then turn on the protections you want, such as `/automod spam` and `/automod invites`. See [AutoMod](/features/automod).
+- **Tickets:** pick a category for ticket channels, a channel for the panel, a support role and a log channel, then post the panel. See [Tickets](/features/tickets).
+- **Welcome:** pick the welcome channel and message, and roles for new members and bots. See [Welcome and join roles](/features/welcome).
+- **Levelling:** on by default. Choose where level-up messages go and add reward roles with `/rank reward add`. See [Levelling](/features/levelling).
+
+## Who can use which command
+
+Moderation commands carry Discord's own permission defaults: `/ban` needs **Ban Members**, `/timeout` needs **Timeout Members**, and so on. You can change who sees each command in **Server Settings → Integrations → Doubt**. Doubt still checks the member's real permissions when the command runs, so hiding or showing a command never gives anyone more power than their roles do.
+
+The [command list](/reference/commands) shows the default permission for every command.
+
+## Removing Doubt
+
+Kick Doubt from **Server Settings → Members** (or **Integrations**). It stops working there at once. Everything it stored for your server (settings, cases, tickets, transcripts, levels and balances) is deleted 30 days later, so an accidental kick loses nothing if you add it back in time. See [Security and data](/security).

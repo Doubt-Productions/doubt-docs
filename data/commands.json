@@ -1,0 +1,816 @@
+{
+  "commands": [
+    {
+      "command": "/afk remove",
+      "description": "Remove your AFK status",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/afk set",
+      "description": "Go AFK in this server",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "message",
+          "description": "Reason you are going AFK",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/automod filter",
+      "description": "Use Discord's word lists",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "level",
+          "description": "Which of Discord’s lists to block",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/automod invites",
+      "description": "Block invite links to other servers",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "enabled",
+          "description": "On or off",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/automod log",
+      "description": "Choose where AutoMod hits are logged",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "channel",
+          "description": "Leave empty to stop logging",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/automod mentions",
+      "description": "Block messages with too many mentions",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "limit",
+          "description": "Most mentions allowed in one message (3-50), or 0 to turn off",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/automod spam",
+      "description": "Block messages Discord flags as spam",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "enabled",
+          "description": "On or off",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/automod status",
+      "description": "Show which AutoMod protections are on",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/automod words add",
+      "description": "Block one or more words (comma-separated, * as wildcard)",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "words",
+          "description": "For example: badword, *scam*",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/automod words list",
+      "description": "Show the blocked words",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/automod words remove",
+      "description": "Unblock one or more words (comma-separated)",
+      "category": "Moderation",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "words",
+          "description": "Words to unblock",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/bal",
+      "description": "Check your balance",
+      "category": "Economy",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/ban",
+      "description": "Ban someone, for good or for a while (also works by user ID)",
+      "category": "Moderation",
+      "permission": "Ban Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "delete_messages",
+          "description": "Remove their recent messages too",
+          "required": false
+        },
+        {
+          "name": "duration",
+          "description": "Leave empty for a permanent ban, or e.g. 7d, 2w",
+          "required": false
+        },
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "user",
+          "description": "Who to ban (a member, or paste a user ID)",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/beg",
+      "description": "Beg for some money",
+      "category": "Economy",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/botinfo",
+      "description": "Version, uptime, servers and links for Doubt",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/botlook avatar",
+      "description": "Doubt's avatar in this server (PNG, JPG, GIF or WebP, up to 4 MB)",
+      "category": "Setup",
+      "permission": "Manage Server",
+      "premium": true,
+      "options": [
+        {
+          "name": "image",
+          "description": "The new avatar",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/botlook banner",
+      "description": "Doubt's profile banner in this server (PNG, JPG, GIF or WebP, up to 4 MB)",
+      "category": "Setup",
+      "permission": "Manage Server",
+      "premium": true,
+      "options": [
+        {
+          "name": "image",
+          "description": "The new banner",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/botlook bio",
+      "description": "Doubt's About Me in this server",
+      "category": "Setup",
+      "permission": "Manage Server",
+      "premium": true,
+      "options": [
+        {
+          "name": "text",
+          "description": "Up to 190 characters",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/botlook reset",
+      "description": "Doubt's normal avatar, banner and bio in this server",
+      "category": "Setup",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "part",
+          "description": "What to reset (everything if empty)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/case history",
+      "description": "List a member's cases",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "member",
+          "description": "Whose cases to show",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/case reason",
+      "description": "Change a case's reason",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "The new reason",
+          "required": true
+        },
+        {
+          "name": "number",
+          "description": "Case number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/case view",
+      "description": "Show one case",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "number",
+          "description": "Case number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/deposit",
+      "description": "Deposit money from wallet to bank",
+      "category": "Economy",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "amount",
+          "description": "Amount to deposit (or \"all\")",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/economy",
+      "description": "Create or delete your economy account",
+      "category": "Economy",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/embedcreator",
+      "description": "Build an embed with a preview and post it in a channel",
+      "category": "Utility",
+      "permission": "Manage Messages",
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/help",
+      "description": "List every Doubt command by category",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/kick",
+      "description": "Kick a member from the server",
+      "category": "Moderation",
+      "permission": "Kick Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "member",
+          "description": "Who to kick",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/ping",
+      "description": "Check Doubt's response time",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/premium",
+      "description": "See or buy Doubt Premium for you or this server",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/profile flair",
+      "description": "Set the accent colour and bio line on your /user info",
+      "category": "Utility",
+      "permission": null,
+      "premium": true,
+      "options": [
+        {
+          "name": "reset",
+          "description": "Remove your flair completely",
+          "required": false
+        },
+        {
+          "name": "bio",
+          "description": "One line, up to 100 characters, no links or mentions (\"none\" removes it)",
+          "required": false
+        },
+        {
+          "name": "colour",
+          "description": "Hex colour like #8f16ab, or \"none\" to remove it",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/rank info",
+      "description": "Show your rank card, or someone else's",
+      "category": "Levelling",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "user",
+          "description": "Member to show",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/rank leaderboard",
+      "description": "Show the members with the most XP",
+      "category": "Levelling",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/rank reset",
+      "description": "Reset a member's level and XP",
+      "category": "Levelling",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "user",
+          "description": "Member to reset",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/rank reward add",
+      "description": "Give a role at a level",
+      "category": "Levelling",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "role",
+          "description": "Role to give",
+          "required": true
+        },
+        {
+          "name": "level",
+          "description": "Level that gives the role",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/rank reward remove",
+      "description": "Stop giving a role at a level",
+      "category": "Levelling",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "level",
+          "description": "Level to clear",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/rank set",
+      "description": "Set a member's level",
+      "category": "Levelling",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": [
+        {
+          "name": "level",
+          "description": "New level",
+          "required": true
+        },
+        {
+          "name": "user",
+          "description": "Member to change",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/rank style",
+      "description": "Style your rank card in every server",
+      "category": "Levelling",
+      "permission": null,
+      "premium": true,
+      "options": [
+        {
+          "name": "reset",
+          "description": "Go back to the standard card",
+          "required": false
+        },
+        {
+          "name": "bar",
+          "description": "Progress bar colour as hex, e.g. #38d39f (or \"none\")",
+          "required": false
+        },
+        {
+          "name": "accent",
+          "description": "Accent colour as hex, e.g. #ff5ec4 (or \"none\")",
+          "required": false
+        },
+        {
+          "name": "background",
+          "description": "A built-in background",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/report server",
+      "description": "Report this server to Doubt's staff for misusing Doubt",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "What happened",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/report user",
+      "description": "Report a member to Doubt's staff",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "What happened",
+          "required": true
+        },
+        {
+          "name": "user",
+          "description": "Who you are reporting",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/schedule create",
+      "description": "Schedule an embed in a channel, once or on repeat",
+      "category": "Utility",
+      "permission": "Manage Messages",
+      "premium": true,
+      "options": [
+        {
+          "name": "hours",
+          "description": "For \"Every few hours\": hours between posts",
+          "required": false
+        },
+        {
+          "name": "repeat",
+          "description": "How often (once if empty)",
+          "required": false
+        },
+        {
+          "name": "when",
+          "description": "First post, in UTC: 2026-12-24 18:00, a Discord timestamp, or in 2h",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "description": "Where to post it",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/schedule delete",
+      "description": "Delete a scheduled message",
+      "category": "Utility",
+      "permission": "Manage Messages",
+      "premium": false,
+      "options": [
+        {
+          "name": "number",
+          "description": "Its number from /schedule list",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/schedule list",
+      "description": "This server's scheduled messages",
+      "category": "Utility",
+      "permission": "Manage Messages",
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/serverinfo",
+      "description": "Members, channels, boosts and more about this server",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/setup",
+      "description": "Set up welcome messages, tickets and moderation logs",
+      "category": "Setup",
+      "permission": "Manage Server",
+      "premium": false,
+      "options": []
+    },
+    {
+      "command": "/ticket add",
+      "description": "Let another member see this ticket",
+      "category": "Tickets",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "member",
+          "description": "The member",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/ticket close",
+      "description": "Close this ticket and save a transcript",
+      "category": "Tickets",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why it is being closed",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/ticket remove",
+      "description": "Take a member out of this ticket",
+      "category": "Tickets",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "member",
+          "description": "The member",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/timeout",
+      "description": "Time a member out (up to 28 days)",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "duration",
+          "description": "How long, like 30m, 2h or 3d",
+          "required": true
+        },
+        {
+          "name": "member",
+          "description": "Who to time out",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/unban",
+      "description": "Unban someone (paste their user ID)",
+      "category": "Moderation",
+      "permission": "Ban Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "user",
+          "description": "Who to unban (user ID)",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/untimeout",
+      "description": "Lift a member's timeout",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "member",
+          "description": "Whose timeout to lift",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/user avatar",
+      "description": "Show an avatar in full size",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "user",
+          "description": "User whose avatar to show (you if empty)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/user info",
+      "description": "Account age, join date, roles and key permissions",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "user",
+          "description": "User to look up (you if empty)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/user profile",
+      "description": "Show Doubt badges and profile",
+      "category": "Utility",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "user",
+          "description": "User whose profile to show (you if empty)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "command": "/warn",
+      "description": "Warn a member and record it as a case",
+      "category": "Moderation",
+      "permission": "Timeout Members",
+      "premium": false,
+      "options": [
+        {
+          "name": "reason",
+          "description": "Why (shown to them, in the case and in the audit log)",
+          "required": false
+        },
+        {
+          "name": "member",
+          "description": "Who to warn",
+          "required": true
+        }
+      ]
+    },
+    {
+      "command": "/withdraw",
+      "description": "Withdraw money from bank to wallet",
+      "category": "Economy",
+      "permission": null,
+      "premium": false,
+      "options": [
+        {
+          "name": "amount",
+          "description": "Amount to withdraw (or \"all\")",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "Report message",
+      "kind": "message",
+      "permission": null
+    },
+    {
+      "name": "Cases",
+      "kind": "user",
+      "permission": "Timeout Members"
+    },
+    {
+      "name": "Get Avatar",
+      "kind": "user",
+      "permission": null
+    },
+    {
+      "name": "Info",
+      "kind": "user",
+      "permission": null
+    },
+    {
+      "name": "Profile",
+      "kind": "user",
+      "permission": null
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/introduction", "destination": "/", "permanent": true },
+    {
+      "source": "/get-started/getting-started",
+      "destination": "/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/get-started/configuration",
+      "destination": "/getting-started",
+      "permanent": true
+    },
+    { "source": "/guides/features", "destination": "/", "permanent": true },
+    { "source": "/guides/commands", "destination": "/reference/commands", "permanent": true },
+    { "source": "/legal/welcome", "destination": "/security", "permanent": true },
+    { "source": "/legal/privacy", "destination": "https://doubtbot.eu/privacy", "permanent": true },
+    { "source": "/legal/terms", "destination": "https://doubtbot.eu/terms", "permanent": true },
+    { "source": "/reference/architecture", "destination": "/", "permanent": true },
+    { "source": "/reference/database", "destination": "/security", "permanent": true },
+    { "source": "/reference/engineering-guide", "destination": "/", "permanent": true },
+    { "source": "/reference/contributing", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

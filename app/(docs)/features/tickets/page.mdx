@@ -1,0 +1,49 @@
+export const metadata = {
+  title: 'Tickets',
+  description: 'A ticket panel, private ticket channels and transcripts.',
+};
+
+# Tickets
+
+Members open a private ticket from a panel; Doubt creates a channel only they and your support team can see, and saves a transcript when it's closed.
+
+## Set it up
+
+In `/setup` → **Tickets** (or on the dashboard), pick:
+
+- **Category for new tickets:** where ticket channels are created. Doubt needs **Manage Channels** and **Manage Roles** on that category to set each ticket's permissions.
+- **Channel for the ticket panel:** where the panel with the topic menu is posted.
+- **Support role:** who sees and handles every ticket.
+- **Ticket log and transcripts channel:** where closed tickets and their transcripts are posted.
+
+Then press **Post panel again** to post the panel. Do that again after you change the topics.
+
+## Topics
+
+The standard panel has three topics: **General support**, **Report a member** and **Appeal**. The topic is shown on the ticket and in the log.
+
+<Callout type="premium">
+With server Premium you can replace them with up to 10 topics of your own, each with a name, an emoji (a normal or server emoji), a short description and an optional staff role. That role sees and handles the tickets of its topic, next to the support role. Manage them in `/setup` → **Tickets** → **Custom topics** or on the dashboard. If Premium ends, your topics are kept and the panel shows the standard three until it's back.
+</Callout>
+
+## Working a ticket
+
+- A member can have **one open ticket** at a time. Ticket channels are numbered (`ticket-0007`) so names never show who opened them.
+- **Claim** marks that you're handling it. **Close** closes it; the member who opened it can close their own ticket too.
+- `/ticket add member` and `/ticket remove member` let someone else into the ticket, or take them out.
+- `/ticket close reason` closes it with a reason. The channel is deleted a few seconds later.
+- A ticket channel deleted by hand still counts as closed, so the member can open a new one.
+
+Support staff are the support role, the topic's own staff role, and anyone with **Manage Channels**.
+
+## Transcripts
+
+When a ticket closes, Doubt saves an HTML transcript of the channel (up to the last 5,000 messages) and posts it with a summary in the ticket log channel. On the [dashboard](/dashboard), the **Transcripts** page lists closed tickets and opens each transcript in your browser. Admins can delete a transcript there.
+
+Transcripts are deleted **30 days after the ticket closed**, together with the copy posted in the log channel.
+
+<Callout type="warning">
+Discord only gives bots the text of members' messages with its **Message Content** permission, which verified bots like Doubt have to apply for. Until Discord has approved it, transcripts show who posted when, plus attachments and embeds, and a note that the message text wasn't available.
+</Callout>
+
+<CommandList category="Tickets" />

@@ -1,0 +1,44 @@
+export const metadata = {
+  title: 'Utility',
+  description: 'AFK, server and user info, and the embed creator.',
+};
+
+# Utility
+
+## AFK
+
+`/afk set message` marks you as away in this server. When someone mentions you, Doubt replies with your message. The next time you send a message, Doubt removes your AFK and says welcome back. `/afk remove` clears it by hand.
+
+If Doubt has **Manage Nicknames**, it also puts `[AFK]` in front of your nickname and changes it back when you return.
+
+AFK messages can be up to 200 characters, or 500 with [User Premium](/features/premium).
+
+## Server and user info
+
+| Command | Shows |
+|---|---|
+| `/serverinfo` | Members, channels, roles, boosts, creation date and owner of the server. |
+| `/user info user` | Account age, join date, roles and key permissions. Also on the **Info** context menu. |
+| `/user avatar user` | An avatar in full size. Also on the **Get Avatar** context menu. |
+| `/user profile user` | Doubt badges and profile. Also on the **Profile** context menu. |
+| `/botinfo` | Doubt's version, uptime, server count and links. |
+| `/ping` | Doubt's response time. |
+| `/help` | Every command you can use, by category, with links to the docs and the privacy policy. |
+
+Context menus are on the right-click menu of a member (**Apps** on mobile).
+
+## Embed creator
+
+`/embedcreator` (needs **Manage Messages**) opens a form for a title, description, colour, footer and image. Doubt shows a private preview; when it looks right, pick a channel and post it. The embed is posted without pinging anyone, and only in channels where you can post yourself.
+
+<Callout type="premium" title="💎 Server Premium: scheduled messages">
+`/schedule create channel when repeat hours` posts an embed made with the same form later, once or on repeat: daily, weekly or every 1 to 720 hours. Times are in UTC (`2026-12-24 18:00`, a Discord timestamp, or `in 2h`), and repeats never drift. A server can have 25 schedules. `/schedule list` and `/schedule delete number` work without Premium; without Premium, schedules are kept but paused. A schedule also pauses itself when its channel is gone or Doubt or its creator can no longer post there.
+</Callout>
+
+## Profile flair
+
+<Callout type="premium" title="💎 User Premium: profile flair">
+`/profile flair colour bio` sets an accent colour and a one-line bio (up to 100 characters, no links or mentions) shown on your `/user info` and `/user profile`. `/profile flair reset:true` removes it.
+</Callout>
+
+<CommandList category="Utility" />

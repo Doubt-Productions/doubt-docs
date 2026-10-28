@@ -1,0 +1,47 @@
+export const metadata = {
+  title: 'Moderation and cases',
+  description: 'Warn, timeout, kick and ban, with numbered cases and a mod log.',
+};
+
+# Moderation and cases
+
+Every moderation action Doubt takes is saved as a numbered **case** for your server, so you can look up what happened to a member, who did it and why.
+
+## Actions
+
+| Command | What it does | Default permission |
+|---|---|---|
+| `/warn member reason` | Records a warning. Nothing else happens to the member. | Timeout Members |
+| `/timeout member duration reason` | Times the member out, up to 28 days (`30m`, `2h`, `3d`). | Timeout Members |
+| `/untimeout member reason` | Lifts a timeout early. | Timeout Members |
+| `/kick member reason` | Kicks the member. | Kick Members |
+| `/ban user duration delete_messages reason` | Bans for good, or for a while with `duration` (`7d`, `2w`). Works with a user ID for people who already left. `delete_messages` removes their last hour, day or week of messages. | Ban Members |
+| `/unban user reason` | Unbans by user ID. | Ban Members |
+
+The reason is shown to the member (in the DM), in the case and in Discord's audit log.
+
+Doubt refuses an action it shouldn't take: on the server owner, on yourself, on Doubt, or on someone whose highest role is the same as or above yours (unless you own the server) or Doubt's.
+
+### Temporary bans
+
+A ban with a `duration` is lifted automatically when it ends, and the unban is recorded as its own case. Bans and unbans done through Discord itself (right-click → Ban) are recorded as cases too.
+
+### DMs to the member
+
+With **DM on action** turned on (the default), Doubt messages the member before a warn, timeout, kick or ban, with the server name, the action and the reason. Kicks and bans are DMed first, because afterwards Doubt shares no server with them. If their DMs are closed, the action still happens and the case says the DM couldn't be sent. Turn it off in `/setup` → **Moderation** or on the dashboard.
+
+## Cases
+
+Cases are numbered per server: #1, #2, #3 and so on.
+
+- `/case view number` shows one case.
+- `/case history member` lists a member's cases. The **Cases** context menu (right-click a member → Apps → Cases) does the same.
+- `/case reason number reason` changes a case's reason. Only the moderator who made the case, or someone with **Manage Server**, can edit it. The mod log message is updated too.
+
+On the [dashboard](/dashboard), the **Cases** page lists every case with a filter per member. Members with **Timeout Members** can read cases there; changing settings needs **Manage Server**.
+
+## Mod log
+
+Pick a **mod log** channel in `/setup` → **Moderation** and every new case is posted there as it happens, with the member, moderator, reason and duration. Doubt needs **View Channel**, **Send Messages** and **Embed Links** in that channel.
+
+<CommandList category="Moderation" prefix="/case" />
