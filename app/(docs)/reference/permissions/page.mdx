@@ -15,17 +15,22 @@ Doubt's invite link asks for these permissions. Keep them all ticked: each one i
 | **Attach Files** | Rank cards, welcome cards and ticket transcripts. |
 | **Read Message History** | Saving ticket transcripts. |
 | **Manage Messages** | Cleaning up messages in the channels Doubt manages. |
+| **Manage Server** | Setting up Discord's native [AutoMod](/features/automod) rules with `/automod`. |
+| **Manage Nicknames** | Putting `[AFK]` in front of your nickname while you're [AFK](/features/utility#afk). |
+| **View Audit Log** | Crediting bans and unbans done in Discord itself (not with `/ban`) to the right moderator in the case. |
 | **Manage Channels** | Creating and deleting ticket channels. |
 | **Manage Roles** | Welcome and reward roles, and the permissions on each ticket channel. |
 | **Kick Members** | `/kick` |
 | **Ban Members** | `/ban` and `/unban`, and lifting temporary bans. |
 | **Timeout Members** | `/timeout` and `/untimeout` |
 
-A few permissions aren't in the invite, because only one optional feature uses each:
+If you untick one of these, the rest of Doubt keeps working and only that feature stops: without **Manage Nicknames** AFK works without the tag, and without **View Audit Log** a ban done in Discord is logged with the moderator marked as unknown.
 
-- **Manage Server** lets Doubt manage [AutoMod](/features/automod) rules. Add it to Doubt's role if you use `/automod`.
-- **Manage Nicknames** lets Doubt put `[AFK]` in front of your nickname while you're [AFK](/features/utility#afk). Without it, AFK works the same, just without the tag.
-- **Create Invite** is only used in Doubt's own support server.
+**Create Invite** isn't in the invite; it's only used in Doubt's own support server.
+
+<Callout type="note">
+Added Doubt before the invite asked for Manage Server, Manage Nicknames and View Audit Log? Either give Doubt's role those permissions in **Server Settings → Roles**, or open [doubtbot.eu/invite](https://doubtbot.eu/invite) again and re-authorise Doubt for your server. Nothing else changes.
+</Callout>
 
 ## Role order
 
